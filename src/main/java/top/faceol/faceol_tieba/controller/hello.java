@@ -21,7 +21,7 @@ import java.util.*;
 public class hello {
     @GetMapping("/hello")
     public String hello(){
-        System.out.println("7777");
+        System.out.println("888");
         return "hello";
     }
     @Autowired
