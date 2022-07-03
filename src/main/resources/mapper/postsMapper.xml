@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis配置文件-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.faceol.faceol_tieba.dao.PostMapper">
+    <select id="getPostByForum" resultType="java.util.List" parameterType="int">
+        select * from fa_post where id in
+        (select post_id from fa_post_forum where forum_id=#{id})
+        limit #{index},#{size}
+    </select>
+</mapper>
